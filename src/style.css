@@ -11,13 +11,17 @@ ul {
 .header {
   font-size: 16px;
 }
+
 .weather-app {
-  max-width: 400px;
-  margin: 40px auto;
   border: 1px solid #dadde1;
   border-radius: 5px;
   padding: 30px;
 }
+.weather-app-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .row {
   font-size: 12px;
 }
