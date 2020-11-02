@@ -37,6 +37,7 @@ ul {
 .temperature-now strong {
   font-size: 50px;
   line-height: 1;
+  text-align: center;
 }
 
 .units {
