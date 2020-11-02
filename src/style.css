@@ -29,3 +29,18 @@ ul {
 .col {
   margin-top: 40px;
 }
+
+.temperature-now {
+  padding: 30px;
+}
+
+.temperature-now strong {
+  font-size: 50px;
+  line-height: 1;
+}
+
+.units {
+  position: relative;
+  top: -24px;
+  font-size: 14px;
+}
