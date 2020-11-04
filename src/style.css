@@ -6,10 +6,11 @@ li {
   list-style: none;
 }
 ul {
-  padding: 0;
+  padding: none;
 }
+
 .header {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .weather-app {
