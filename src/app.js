@@ -9,6 +9,7 @@ let day=days[ date.getDay()];
 return`${day} ${hours}:${minutes}`;
 }
 
+
 function displayTemperature(response) {
     console.log(response.data);
 
@@ -25,7 +26,7 @@ function displayTemperature(response) {
     cityElement.innerHTML=response.data.name;
     humidityElement.innerHTML=response.data.main.humidity;
     windElement.innerHTML=Math.round(response.data.wind.speed);
-    visibilityElement.innerHTML=response.data.sys.visibility;
+    visibilityElement.innerHTML=response.data.visibility/1000;
     dateElement.innerHTML=formatDate(response.data.dt * 1000);
 
 
