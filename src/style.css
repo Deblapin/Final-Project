@@ -32,6 +32,8 @@ ul {
 
 .temperature-now {
   padding: 30px;
+  position: relative;
+  right: -20px;
 }
 
 .temperature-now strong {
