@@ -19,6 +19,7 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let visibilityElement = document.querySelector("#visibility");
     let dateElement=document.querySelector("#date");
+    let iconElement= document.querySelector("#icon");
 
 
 
@@ -28,13 +29,17 @@ function displayTemperature(response) {
     windElement.innerHTML=Math.round(response.data.wind.speed);
     visibilityElement.innerHTML=response.data.visibility/1000;
     dateElement.innerHTML=formatDate(response.data.dt * 1000);
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+
 
 
 
 }
 
 let apiKey = "bae35d99184617162bd406c1c6a7489e";
+let city= "Tel Aviv"
 let apiUrl =
- `https://api.openweathermap.org/data/2.5/weather?q=Tel Aviv&appid=${apiKey}&units=metric`;
+ `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
