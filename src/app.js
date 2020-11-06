@@ -21,9 +21,11 @@ function displayTemperature(response) {
     let dateElement=document.querySelector("#date");
     let iconElement= document.querySelector("#icon");
 
+    celsiusTemp=response.data.main.temp;
 
 
-    temperatureElement.innerHTML= Math.round(response.data.main.temp);
+
+    temperatureElement.innerHTML= Math.round(celsiusTemp);
     cityElement.innerHTML=response.data.name;
     humidityElement.innerHTML=response.data.main.humidity;
     windElement.innerHTML=Math.round(response.data.wind.speed);
@@ -46,7 +48,34 @@ let cityinputElement=document.querySelector("#city-input");
 search(cityinputElement.value);
 }
 
-search("Tel Aviv")
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+   let fahrenheiTemp = (celsiusTemp*9)/5+32;
+   let temperatureElement= document.querySelector("#temperature");
+   celsiusLink.classList.remove("active");
+   fahrenheitLink.classList.add("active");
+   temperatureElement.innerHTML=Math.round(fahrenheiTemp);
+}
+
+function displayCelsiusTemperature(event) {
+    event.preventDefault();
+     celsiusLink.classList.add("active");
+   fahrenheitLink.classList.remove("active");
+    let temperatureElement=document.querySelector("#temperature");
+    temperatureElement.innerHTML=Math.round(celsiusTemp);
+}
+
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit",handleSubmit)
+form.addEventListener("submit",handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click",displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click",displayCelsiusTemperature);
+
+
+search("Tel Aviv");

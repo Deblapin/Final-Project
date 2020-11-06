@@ -48,3 +48,11 @@ ul {
   top: -24px;
   font-size: 14px;
 }
+
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}
