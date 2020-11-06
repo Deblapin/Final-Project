@@ -15,6 +15,7 @@ function displayTemperature(response) {
 
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
+    let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let visibilityElement = document.querySelector("#visibility");
@@ -27,6 +28,7 @@ function displayTemperature(response) {
 
     temperatureElement.innerHTML= Math.round(celsiusTemp);
     cityElement.innerHTML=response.data.name;
+    descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML=response.data.main.humidity;
     windElement.innerHTML=Math.round(response.data.wind.speed);
     visibilityElement.innerHTML=response.data.visibility/1000;

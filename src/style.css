@@ -9,6 +9,10 @@ ul {
   padding: none;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
+
 .header {
   font-size: 15px;
 }
